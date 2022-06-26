@@ -11,7 +11,7 @@ app=FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 sc = PortScanner()
 
-@app.get("/{port}", response_class=RedirectResponse)
+@app.get("/app/{port}", response_class=RedirectResponse)
 async def redirect(port: str):
     return RedirectResponse(f"http://54.88.107.129:{port}/")
 
