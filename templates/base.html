@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/static/favicon.ico" />
+    <title>SmartPro - SandBox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+<body class="bg-yellow-300 p-4">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+        .font-script {
+            font-family: 'Lobster', cursive;
+        }
+    </style>
+    <nav class="flex flex-row justify-around">
+        <img src="/static/logo.png" alt="SandBox"
+            class="cursor-pointer w-32 h-16 fixed top-0 left-0 m-4 hover:animate-fade cursor-pointer" />
+        <h1 class="flex flex-row justify-center top-0 fixed rounded-b-lg bg-gray-300 pb-2">
+            <a href="/3500"><span
+                    class="iconify text-4xl p-1 m-1 mx-4 rounded-full bg-gray-200 shadow-md shadow-gray-500 w-12 h-12 hover:scale-110 hover:transition-all hover:ease-in-out hover:shadow-white"
+                    data-icon="logos:visual-studio-code"></span></a>
+            <a href="/3888"><span
+                    class="iconify text-4xl p-1 m-1 mx-4 rounded-full bg-gray-200 shadow-md shadow-gray-500 w-12 h-12 hover:scale-110 hover:transition-all hover:ease-in-out hover:shadow-white"
+                    data-icon="logos:jupyter"></span></a>
+            <a href="/8080"><span
+                    class="iconify text-4xl p-1 m-1 mx-4 rounded-full bg-gray-200 shadow-md shadow-gray-500 w-12 h-12 hover:scale-110 hover:transition-all hover:ease-in-out hover:shadow-white"
+                    data-icon="logos:jenkins"></span></a>
+            <a href="/3111"><span
+                    class="iconify text-4xl p-1 m-1 mx-4 rounded-full bg-gray-200 shadow-md shadow-gray-500 w-12 h-12 hover:scale-110 hover:transition-all hover:ease-in-out hover:shadow-white"
+                    data-icon="logos:bitbucket"></span></a>
+            <a href="/3222"><span
+                    class="iconify text-4xl p-1 m-1 mx-4 rounded-full bg-gray-200 shadow-md shadow-gray-500 w-12 h-12 hover:scale-110 hover:transition-all hover:ease-in-out hover:shadow-white"
+                    data-icon="logos:jira"></span></a>
+            <a href="/3444"><span
+                    class="iconify text-4xl p-1 m-1 mx-4 rounded-full bg-gray-200 shadow-md shadow-gray-500 w-12 h-12 hover:scale-110 hover:transition-all hover:ease-in-out hover:shadow-white"
+                    data-icon="logos:python"></span></a>
+        </h1>
+        <h3
+            class="right-0 top-0 fixed py-2 px-4 shadow-lg shadow-gray-500 animate-bounce m-2 bg-cyan-400 text-blue-900 font-sans font-bold text-lg"
+                id="calltoaction"
+            >
+            <span class="iconify right-0 top-0 text-xs bg-teal-300 rounded-full border-1 border-black cursor-pointer fixed" data-icon="mdi:close"
+            onClick="closeCallToAction()"
+            ></span>
+            Any questions? <button class="underline cursor-pointer
+            id=" me" onClick="handleClick()" ">Contact me!</button></h3>
+    </nav>
+    <form action=" /contact" method="post"
+                class="bg-cyan-300 border-black border-2 shadow-gray-500 shadow-md flex flex-col items-center p-4 right-0 top-16 fixed hidden"
+                id="form">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="John Doe" required />
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="john@doe.com" required />
+                <label for="message">Message</label>
+                <textarea name="message" id="message" placeholder="Your message here..." required rows="5"
+                    cols="24"></textarea>
+                </form>
+                <script>
+                    var el = document.getElementById("form")
+                    var me = document.getElementById("me")
+                    var call = document.getElementById("calltoaction")
+
+                    function handleClick() {
+                        el.classList.toggle("hidden")
+                    }
+
+                    function closeCallToAction() {
+                        call.classList.add("hidden")
+                    }
+
+
+                </script>
+                {% block content %}{% endblock %}
+</body>
+
+</html>
