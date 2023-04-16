@@ -5,8 +5,12 @@ name = "pypi"
 
 [packages]
 aiofauna = "*"
+aiohttp_sse = "*"
+aiodns = "*"
+geocoder = "*"
 
 [dev-packages]
+aiohttp-devtools = "*"
 
 [requires]
-python_version = "3.9"
+python_version = "^3.8"
